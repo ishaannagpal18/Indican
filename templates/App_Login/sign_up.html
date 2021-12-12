@@ -1,0 +1,30 @@
+{% extends 'layouts.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+Create New Account
+{% endblock %}
+
+{% block content %}
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+
+</section><!-- End Breadcrumbs -->
+<center>
+  <!-- <div class="line">
+
+  </div> -->
+<div class="login_top">
+  <h2>Create New Account: </h2>
+  <form class="container" method="post">
+    {{ form|crispy}}
+    {% csrf_token %}
+<br>
+  <button type="submit" class="btn btn-success btn-sm" >Create Account</button>
+
+  </form>
+</div>
+<div class="login_bottom">
+  <p>Already have an Account? <a href="{% url 'App_Login:login' %}">Login Here</a></p>
+</div>
+
+{% endblock %}

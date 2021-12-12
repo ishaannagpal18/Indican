@@ -1,0 +1,43 @@
+#header .logo img {
+    max-height: 65px;
+}
+#hero {
+
+    background-size: cover;
+}
+.padding{
+  padding: 10% 0 5% 0;
+}
+.sbutton{
+  background: #CDA45E;
+  border-color: #CDA45E;
+}
+.sbutton:hover{
+  background:#d3af71;
+}
+iframe {
+    border: 0;
+    position: absolute;
+    z-index: 10;
+}
+.breadcrumbs {
+    padding: 15px 0;
+    background: #0c0b09;
+    margin-top: 110px;
+}
+.line{
+  border:1px solid #ccc;
+    padding-top:67px;
+}
+.login_bottom{
+  width:45%;
+
+  border:1px solid #ccc;
+  padding:40px;
+}
+.login_top{
+  width:45%;
+  border:1px solid #ccc;
+  padding-top:50px;
+  padding-bottom:50px;
+}
