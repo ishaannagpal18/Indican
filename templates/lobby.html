@@ -1,0 +1,19 @@
+{% extends 'layouts1.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+Lobby
+{% endblock %}
+{% block style %}
+<link href="{% static 'css/exhibition.css'%}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="padding">
+<img src="{% static 'img/graphic.jpg'%}" alt="">
+
+<a href="{% url 'selfie'%}"><img class="bag" src="{% static 'img/bag.gif'%}" alt=""></a>
+
+
+</div>
+
+{% endblock %}

@@ -32,7 +32,7 @@ def login_user(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return HttpResponseRedirect(reverse('home'))
+                return HttpResponseRedirect(reverse('lobby'))
     return render(request, 'App_Login/login.html', context={'form':form})
 
 @login_required

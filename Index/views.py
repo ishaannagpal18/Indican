@@ -33,5 +33,33 @@ def payment_status(request):
 
 
 @login_required(login_url='/account/login')
-def live(request):
-    return render(request, "live.html")
+def auditorium(request):
+    return render(request, "auditorium.html")
+
+@login_required(login_url='/account/login')
+def lobby(request):
+    return render(request, 'lobby.html')
+
+@login_required(login_url='/account/login')
+def exhibition(request):
+    return render(request, 'exhibition.html')
+
+@login_required(login_url='/account/login')
+def ninja(request):
+    return render(request, 'ninja.html')
+
+@login_required(login_url='/account/login')
+def tic_tac_toe(request):
+    return render(request, 'tic-tac-toe.html')
+
+@login_required(login_url='/account/login')
+def planet_defense(request):
+    return render(request, 'planet_defense.html')
+
+@login_required(login_url='/account/login')
+def snake(request):
+    return render(request, 'snake.html')
+
+@login_required(login_url='/account/login')
+def selfie(request):
+    return render(request, 'selfie.html')

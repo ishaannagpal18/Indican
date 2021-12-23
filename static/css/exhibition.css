@@ -1,0 +1,61 @@
+@media (max-width: 1925px) {
+  img{
+    width: 1920px;
+    height: 1080px;
+  }
+      .bag{
+    top: 43%;
+    left: 39%;
+    width: 5%;
+    height: 7%;
+    }
+
+}
+@media (max-width: 1500px) {
+  img{
+    width: 1500px;
+    height: 768px;
+  }
+  .bag{
+      top: 39%;
+      left: 41%;
+    }
+}
+@media (max-width: 1345px) {
+  img{
+    width: 1342px;
+    height: 768px;
+  }
+  .bag{
+      top: 43%;
+      left: 39%;
+    }
+}
+@media (max-width: 1200px) {
+  img{
+    width: 1112px;
+    height: 834px;
+  }
+  .bag{
+      top: 39%;
+      left: 39%;
+
+    }
+}
+
+@media (max-width: 500px) {
+  img{
+    width: 375px;
+    height: 350px;
+  }
+  .bag{
+      top: 18%;
+      left: 39%;
+      height: 4%
+
+}
+}
+.bag{
+  position: absolute;
+  z-index: 1000;
+}

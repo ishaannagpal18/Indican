@@ -41,3 +41,9 @@ iframe {
   padding-top:50px;
   padding-bottom:50px;
 }
+.auditorium {
+  background: url("../img/event.jpg") center center;
+  background-size: cover;
+  position: relative;
+  padding: 80px 0;
+}

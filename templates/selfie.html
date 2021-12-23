@@ -1,0 +1,28 @@
+{% extends 'layouts1.html' %}
+{% load static%}
+{% load crispy_forms_tags %}
+{% block title %}
+Capture picture from your webcam
+{% endblock %}
+
+{% block content %}
+
+
+<div class="padding">
+  <div id="camera" style="height:auto;width:auto; text-align:left;"></div>
+    <input type="button" value="Take a Snap and Download Picture" id="btPic"
+        onclick="takeSnapShot()" /> 
+
+
+
+</div>
+
+
+
+
+{% endblock %}
+
+{% block js %}
+
+<script src="{% static 'js/capture.js'%} "></script>
+{% endblock %}

@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-l#lu34bj85q2itwx_vfi+r-)0)!7dlh+m%p!c32ugzvn1*scia
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','indican.herokuapp.com']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'jsignature',
     'Index',
     'ckeditor',
     'App_Login',
