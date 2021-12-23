@@ -1,1 +1,1 @@
-web:gunicorn Indican.wsgi --log-file -
+web: gunicorn Indican.wsgi --log-file -
