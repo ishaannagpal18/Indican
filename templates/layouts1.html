@@ -47,6 +47,7 @@
   {% block css_block %}
 
     {% endblock %}
+    <div class="cursor"></div>
   <!-- ======= Top Bar ======= -->
   <div id="topbar" class="d-flex align-items-center fixed-top">
     <div class="container d-flex justify-content-center justify-content-md-between">
@@ -74,15 +75,7 @@
           <li><a class="nav-link scrollto" href="{% url 'exhibition' %}">Exhibition</a></li>
           <li><a class="nav-link scrollto" href="{% url 'auditorium' %}">Auditorium</a></li>
           <li><a class="nav-link scrollto" href="#">Session Archive</a></li>
-          <li class="dropdown"><a href="#"><span>Projects</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Project1</a></li>
-              <li><a href="#">Project2</a></li>
-              <li><a href="#">Project3</a></li>
-              <li><a href="#">Project4</a></li>
 
-            </ul>
-          </li>
           <li class="dropdown"><a href="#"><span>Clubhouse</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="{% url 'ninja'%}">Box Ninja</a></li>
@@ -113,79 +106,79 @@
 
     {% endblock %}
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
 
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <h3>Indican</h3>
-              <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
-              </p>
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            <div class="col-lg-4 col-md-4">
+              <div class="footer-info">
+                <h3>Indican</h3>
+                <p>
+                  Water Park Golf Club, 61174,<br>
+                   Regional Road No. 27, Wainfleet, Welland ON.<br><br>
+                  <strong>Phone:</strong> +1 5589 55488 55<br>
+                  <strong>Email:</strong> info@indicanfc.com<br>
+                </p>
+                <div class="social-links mt-3">
+                  <a href="https://twitter.com/indicanfc" target="_blank" class="twitter"><i class="bi bi-twitter"></i></a>
+          <a href="https://www.facebook.com/Indican-Friendship-Club-110939114779952" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://instagram.com/indicanfc?utm_medium=copy_link" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.youtube.com/channel/UCwzFcdmQdyONzEkkrRO-_pQ" target="_blank" class="linkedin"><i class="bi bi-youtube"></i></a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
+            <div class="col-lg-4 col-md-4 footer-links">
+              <h4>Useful Links</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="{% url 'lobby' %}">Lobby</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="{% url 'exhibition' %}">Exhibition</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="{% url 'auditorium' %}">Auditorium</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Session Archive</a></li>
+                <li><i class="bx bx-chevron-right"></i><a href="{% url 'selfie' %}">Selfie Booth</a></li>
+                {% if user.is_authenticated %}
+                <li><i class="bx bx-chevron-right"></i><a href="{% url 'App_Login:logout' %}">Logout</a></li>
 
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
+                {% else %}
 
-          </div>
+                <li><i class="bx bx-chevron-right"></i><a href="{% url 'App_Login:login' %}">Login</a></li>
+                {% endif %}
+
+              </ul>
+
+              </ul>
+            </div>
+            <div class="col-lg-4 col-md-4 footer-links">
+              <h4>Clubhouse</h4>
+              <ul>
+                    <li><i class="bx bx-chevron-right"></i><a href="{% url 'ninja'%}">Box Ninja</a></li>
+                    <li><i class="bx bx-chevron-right"></i><a href="{% url 'tic-tac-toe'%}">Tic-Tac-Toe</a></li>
+                    <li><i class="bx bx-chevron-right"></i><a href="{% url 'planet_defense'%}">Planet Defense</a></li>
+                    <li><i class="bx bx-chevron-right"></i><a href="{% url 'snake'%}">Snake Game</a></li>
+
+              </ul>
+            </div>
+
 
         </div>
       </div>
-    </div>
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Indican</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/restaurantly-restaurant-template/ -->
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Indican</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/restaurantly-restaurant-template/ -->
 
+        </div>
       </div>
-    </div>
-  </footer><!-- End Footer -->
+    </footer><!-- End Footer -->
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -202,6 +195,7 @@
   <!-- Template Main JS File -->
 
   <script src="{% static 'js/main.js'%} "></script>
+  <script src="{% static 'js/main1.js'%} "></script>
   {% block js %}
 
   {% endblock %}

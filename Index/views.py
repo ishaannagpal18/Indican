@@ -8,6 +8,15 @@ from App_Login.models import UserProfile, Subscriber
 def home(request):
     return render(request, 'index.html')
 
+def aboutus(request):
+    return render(request, 'aboutus.html')
+
+def brochure(request):
+    return render(request, 'brochure.html')
+
+def membership(request):
+    return render(request, 'membership.html')
+
 
 def payment_status(request):
     response = request.POST

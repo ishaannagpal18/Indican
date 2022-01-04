@@ -11,6 +11,7 @@ from django.conf.urls import url
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Index.urls')),
+    path('contactus/', include('contact.urls')),
     path('account/', include('App_Login.urls')),
     path('reset_password/',
     auth_views.PasswordResetView.as_view(template_name="registration/password_reset.html"),

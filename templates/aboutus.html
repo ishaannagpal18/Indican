@@ -1,0 +1,195 @@
+{% extends 'layouts.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+About Us
+{% endblock %}
+
+{% block content %}
+<div class="padding1">
+
+
+
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>About</h2>
+        <p>About Us</p>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+          <div class="about-img">
+            <img src="{% static 'img/aboutus.jpg'%}" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+          <h3></h3>
+          <p class="fst-italic">
+            <b>INDICAN Friendship Club</b>  is a virtual platform for the Indians and Canadians to connect and build healthy relationships. It is a membership based club, wherein you can subscribe on our website, engage in our weekly membership activities to keep the fun alive and also avail the services from our onboard associates in both the countries. Keeping the connection between these two countries in mind, this club allows its members to interact, celebrate, and trade virtually.
+          </p>
+          <ul>
+            <li><i class="bi bi-check-circle"></i> From making new friends and networking with them, this virtual platform will boost your ties. </li>
+            <li><i class="bi bi-check-circle"></i> Exciting and enjoying events will exchange our culture, thoughts and lifestyle. Hence, knowing each other better.</li>
+            <li><i class="bi bi-check-circle"></i> This platform will give you a one stop shop for all relevant services which you may require while travelling across India and Canada. </li>
+          </ul>
+          <p>
+            It is a membership based club, you can subscribe and avail our services. <br>
+
+This will not only strengthen the India-Canada relationship, but it will also provide Indians and Canadians with a unique opportunity to explore the two countries.
+ Click here to <a href="{% url 'brochure' %}"> KNOW MORE</a>.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Section -->
+
+  <!-- ======= Why Us Section ======= -->
+  <section id="why-us" class="why-us">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Why Us</h2>
+        <p>Why Choose ICFC</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-4">
+          <div class="box" data-aos="zoom-in" data-aos-delay="100">
+            <span>01</span>
+            <h4>Build Connections</h4>
+            <p>Connect yourself with the people overseas and feel like home.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mt-4 mt-lg-0">
+          <div class="box" data-aos="zoom-in" data-aos-delay="200">
+            <span>02</span>
+            <h4>Entertainment</h4>
+            <p>Engaging activities every week to entertain you to the fullest.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mt-4 mt-lg-0">
+          <div class="box" data-aos="zoom-in" data-aos-delay="300">
+            <span>03</span>
+            <h4> Special Services</h4>
+            <p>Variety of services to offer all our member which they can avail sitting at home.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Why Us Section -->
+  <!-- ======= Chefs Section ======= -->
+  <section id="chefs" class="chefs">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Team</h2>
+        <p>Our Team</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6">
+          <div class="member" data-aos="zoom-in" data-aos-delay="100">
+            <img src="{% static 'img/team/surender-sir.jpeg'%} " class="img-fluid" alt="">
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4> Mr. Surender Gupta</h4>
+                <span>President</span>
+              </div>
+              <!-- <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="member" data-aos="zoom-in" data-aos-delay="200">
+            <img src="{% static 'img/team/anmol-sir.jpeg'%} " class="img-fluid" alt="">
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4>Mr. Anmol Chawla</h4>
+                <span>Secretary</span>
+              </div>
+              <!-- <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="member" data-aos="zoom-in" data-aos-delay="300">
+            <img src="{% static 'img/team/radhika.jpeg'%}" class="img-fluid" alt="">
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4>Ms. Radhika Khanna</h4>
+                <span>Treasurer</span>
+              </div>
+              <!-- <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="member" data-aos="zoom-in" data-aos-delay="300">
+            <img src="{% static 'img/team/sushil-sir.jpeg'%}" class="img-fluid" alt="">
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4>Mr. Sushil Kumar</h4>
+                <span>Vice President</span>
+              </div>
+              <!-- <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="member" data-aos="zoom-in" data-aos-delay="300">
+            <img src="{% static 'img/team/gautam-sir.jpeg'%}" class="img-fluid" alt="">
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4>Mr. Gautam Saini</h4>
+                <span>Executive Committee Member</span>
+              </div>
+              <!-- <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div> -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Chefs Section -->
+
+</div>
+
+{% endblock %}

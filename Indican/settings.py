@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'Index',
     'ckeditor',
     'App_Login',
+    'contact',
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -196,4 +197,10 @@ MESSAGE_TAGS = {
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 django_heroku.settings(config=locals(), staticfiles=False,logging=False)
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'indicanfc@gmail.com'
+EMAIL_HOST_PASSWORD = 'indican@123'
+EMAIL_USE_TLS = True

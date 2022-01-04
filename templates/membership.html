@@ -1,0 +1,137 @@
+{% extends 'layouts.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+Membership
+{% endblock %}
+
+{% block content %}
+<div class="padding ">
+  <!-- ======= Specials Section ======= -->
+  <section id="specials" class="specials">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Join Us</h2>
+        <p>Membership Details</p>
+      </div>
+
+      <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-3">
+          <ul class="nav nav-tabs flex-column">
+            <li class="nav-item">
+              <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Guest Membership</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Free Membership</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Membership Process</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Membership Criteria</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <div class="tab-content">
+            <div class="tab-pane active show" id="tab-1">
+
+                <div class="details order-2 order-lg-1">
+                  <h3>Can I attend events as a guest?</h3>
+                  <p class="fst-italic"></p>
+                  <p>You can attend some specific promotional events as a guest. You will need to login as a guest to attend some specific events which are specifically conducted for members only.</p>
+                </div>
+
+
+            </div>
+            <div class="tab-pane" id="tab-2">
+
+                <div class="details order-2 order-lg-1">
+                  <h3>What is the duration of free trial?</h3>
+                  <p class="fst-italic"></p>
+                  <p>We offer you a free membership to understand the benefits and environment of ICFC. You can access all the events and the services provided by us.</p>
+                </div>
+
+
+            </div>
+            <div class="tab-pane" id="tab-3">
+
+                <div class="details order-2 order-lg-1">
+                  <h3>How to be a member of ICFC?</h3>
+                  <p class="fst-italic"></p>
+                  <p>You can register on our website which is www.indicanfc.com through your email id which will generate a unique membership id for you. </p>
+                </div>
+
+
+            </div>
+
+            <div class="tab-pane" id="tab-5">
+
+                <div class="details order-2 order-lg-1">
+                  <h3>Who can join?</h3>
+                  <p class="fst-italic"></p>
+                  <p>People from all over the world can be a member of ICFC. We have various services for the people in Canada and India but it is open for everyone.</p>
+                </div>
+
+
+            </div>
+            </div>
+          </div>
+          <div class="col-lg-3 mt-4 mt-lg-0">
+            <div class="text-center order-1 order-lg-2">
+              <img src="{% static 'img/join now.jpg'%} " alt="" class="img-fluid">
+            </div>
+          </div>
+
+
+      </div>
+
+    </div>
+  </section><!-- End Specials Section -->
+
+  <!-- ======= Events Section ======= -->
+  <section id="events" class="events">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Events</h2>
+        <p>Upcoming Events</p>
+      </div>
+
+
+
+
+            <div  class="row">
+              <div style="height:546px !important;" class="col-lg-6">
+                <img src="{% static 'img/launch.jpg'%} " class="img-fluid" alt="">
+              </div>
+              <div  class="col-lg-6 pt-4 pt-lg-0 content">
+                <h3>Launch Event</h3>
+                <div class="price">
+                  <p><span></span></p>
+                </div>
+                <p class="fst-italic">
+                  We are coming with INDICAN Friendship Club in the month of January with all our services. This launching event will be full of fun, enjoyment and excitement. The main theme of the event will be a Lohri centric festive celebration wherein people from India, Canada and other countries will be invited and join together. We will share the richness of our culture with you.
+                </p>
+                <ul>
+                  <li><i class="bi bi-check-circled"></i> Lohri is a traditional winter folk festival observed primarily in India's northern regions. It is a joyful celebration that marks the Winter Solstice and expects longer days as the sun moves closer to the northern hemisphere. </li>
+                  <li><i class="bi bi-check-circled"></i> This event will make you feel the warmth of a bonfire and taste of gurh and gachak. This festival and punjab culture is incomplete with bhangra and for bhangra there must be dhols. </li>
+                  <li><i class="bi bi-check-circled"></i>This event will be incomplete without fun games and a lot of amusement. </li>
+                </ul>
+                <p>
+                  This pandemic can not take our fun away. We will make sure that you enjoy to the fullest with your friends and family.
+                </p>
+              </div>
+            </div>
+          </div><!-- End testimonial item -->
+
+
+
+
+  </section><!-- End Events Section -->
+
+</div>
+
+{% endblock %}
