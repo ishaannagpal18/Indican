@@ -37,6 +37,7 @@ transform: translate(-50%, -50%);
 }
 .cover1 .countdown {
   margin-bottom: 0px;
+  margin-top: 6%;
 }
 .cover1 .countdown div {
   text-align: center;
@@ -293,8 +294,77 @@ a:active {
   font-size: 8.5vw;
   text-transform: uppercase;
 }
-
-
+@media (max-width: 991px){
+.navbar ul {
+display: flex;
+}
+}
+@media screen and (max-width:800px){
+  #header{
+    padding:0.5%;
+  }
+  #topbar .contact-info i {
+top: 20%;
+position: absolute;
+left: 1%;
+}
+.cover1{
+  margin-top: 1%;
+}
+.cover1 h2 {
+font-size: 280%;
+}
+.cover1 h1 {
+font-size: 120%;
+line-height: 0px;
+}
+.cover1 .countdown {
+margin-top: 3%;
+}
+.cover1 .countdown div {
+width: 90px;
+padding: 4px;
+border-top: 3px solid #cda45e;
+}
+.cover1 .countdown div h3 {
+font-size: 32px;
+margin-bottom: 5px;
+}
+.cover1 .countdown div h4 {
+font-size: 14px;
+}
+.container1 {
+padding-top: 0px;
+min-height: 100%;
+padding-top: 2%;
+}
+.social-icon {
+border: 0px solid;
+width: 40px;
+height: 40px;
+}
+.social-buttons {
+padding: 10px;
+padding-bottom: 0px;
+margin: 0px;
+}
+.facebook {
+font-size: 18px;
+padding-top: 9px;
+}
+.youtube {
+font-size: 18px;
+padding-top: 9px;
+}
+.instagram {
+font-size: 18px;
+padding-top: 8px;
+}
+.twitter {
+font-size: 18px;
+padding-top: 10px;
+}
+}
 
 
 
