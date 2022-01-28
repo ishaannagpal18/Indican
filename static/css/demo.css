@@ -287,3 +287,48 @@ z-index: 11;
 	transform: translateX(0);
 	transform: translate3d(0, 0, 0);
 }
+.img{
+  height:100%;
+}
+.carousel-inner:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+@media screen and (max-width:550px){
+.carousel {
+height: 33vh;
+}
+.container2 {
+padding-top: 55px;
+padding-left: 4%;
+}
+.container2 h1 {
+font-size: 21px;
+line-height: 30px;
+}
+.btns {
+margin-top: 0px;
+}
+.btn-menu, .btn-book {
+font-size: 10px;
+padding: 7px 10px;
+
+}
+.play-btn {
+width: 56px;
+height: 56px;
+
+}
+.carousel-indicators li {
+width: 8px;
+height: 2px;
+}
+.container {
+padding-top: 0px;
+}
+}

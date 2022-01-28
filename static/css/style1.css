@@ -313,3 +313,33 @@ rgba(205,164,94,0.42) 31.77%,
     border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
   }
 }
+
+@media screen and (max-width:550px){
+  section{
+    padding: 0;
+    padding-top: 10%;
+  }
+  #header{
+    padding:2%;
+  }
+  #topbar .contact-info i {
+top: 20%;
+position: absolute;
+left: 0;
+}
+#header .logo img {
+max-height: 45px;
+}
+.about {
+padding: 8% 0;
+}
+.padding3{
+  padding-top: 18%;
+}
+.padding2{
+  padding-top: 25%;
+}
+.pdf{
+  width: 100%;
+}
+}

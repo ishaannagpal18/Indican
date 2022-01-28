@@ -6,13 +6,13 @@ Brochure
 {% endblock %}
 
 {% block content %}
-<div class="padding">
+<div class="padding padding2">
   <div class="container">
     <center>
       <div class="download">
         <a href="{% static 'img/indican_brochure_2.pdf'%}" download><button type="button" class="btn btn-outline-warning download1">Download <i class="fas fa-download"></i></button></a>
       </div>
-    <embed type="application/pdf" src="{% static 'img/indican_brochure_2.pdf'%}" width="50%" height="600">
+    <embed class="pdf"  type="application/pdf" src="{% static 'img/indican_brochure_2.pdf'%}" width="50%" height="600">
   </div>
 </div>
 {% endblock %}
