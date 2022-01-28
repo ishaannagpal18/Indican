@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django import forms
-from App_Login.models import UserProfile, Subscriber
+from App_Login.models import *
 
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
@@ -12,7 +12,7 @@ COUNTRY_CHOICES = tuple(countries)
 
 class ProfileForm(ModelForm):
     class Meta:
-        model = UserProfile
+        model = Profile
         exclude = ('user',)
 
 class SignUpForm(UserCreationForm):

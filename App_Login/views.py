@@ -5,35 +5,86 @@ from django.http import HttpResponse
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout, authenticate, update_session_auth_hash
+from django.conf import settings
+from django.core.mail import send_mail
 
-from App_Login.models import UserProfile, Subscriber
+from App_Login.models import *
 from App_Login.forms import ProfileForm, SignUpForm, UserProfileChange, SubscriberForm
 
 from django.contrib import messages
 import razorpay
+import uuid
 
-def sign_up(request):
-    form = SignUpForm()
-    if request.method == 'POST':
-        form = SignUpForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Account Created Successfully!")
-            return HttpResponseRedirect(reverse('App_Login:login'))
-    return render(request, 'App_Login/sign_up.html', context={'form':form})
+def register_attempt(request):
 
-def login_user(request):
-    form = AuthenticationForm()
     if request.method == 'POST':
-        form = AuthenticationForm(data=request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return HttpResponseRedirect(reverse('lobby'))
-    return render(request, 'App_Login/login.html', context={'form':form})
+        fullname = request.POST.get('fullname')
+        dob = request.POST.get('dob')
+        gender = request.POST.get('gender')
+        contact = request.POST.get('contact')
+        country = request.POST.get('country')
+        city = request.POST.get('city')
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        print(fullname)
+        print(dob)
+        print(gender)
+        print(contact)
+        print(country)
+        print(city)
+
+        try:
+            if User.objects.filter(username = username).first():
+                messages.success(request, 'Username is taken.')
+                return HttpResponseRedirect(reverse('App_Login:register_attempt'))
+
+            if User.objects.filter(email = email).first():
+                messages.success(request, 'Email is taken.')
+                return HttpResponseRedirect(reverse('App_Login:register_attempt'))
+
+
+            user_obj = User(username = username , email = email)
+            user_obj.set_password(password)
+            user_obj.save()
+            auth_token = str(uuid.uuid4())
+            profile_obj = Profile.objects.create(user = user_obj , auth_token = auth_token, fullname = fullname, dob=dob,gender=gender, contact=contact, country=country, city=city)
+            profile_obj.save()
+            send_mail_after_registration(email , auth_token)
+            return HttpResponseRedirect(reverse('App_Login:token_send'))
+
+        except Exception as e:
+            print(e)
+
+
+    return render(request , 'App_Login/register.html')
+
+def login_attempt(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user_obj = User.objects.filter(username = username).first()
+        if user_obj is None:
+            messages.success(request, 'User not found.')
+            return HttpResponseRedirect(reverse('App_Login:login_attempt'))
+
+
+        profile_obj = Profile.objects.filter(user = user_obj ).first()
+
+        if not profile_obj.is_verified:
+            messages.success(request, 'Profile is not verified check your mail.')
+            return HttpResponseRedirect(reverse('App_Login:login_attempt'))
+
+        user = authenticate(username = username , password = password)
+        if user is None:
+            messages.success(request, 'Wrong password.')
+            return HttpResponseRedirect(reverse('App_Login:login_attempt'))
+
+        login(request , user)
+        return HttpResponseRedirect(reverse('launch'))
+
+    return render(request , 'App_Login/login.html')
 
 @login_required
 def logout_user(request):
@@ -74,3 +125,38 @@ def subscriber_payment(request):
             return render(request, 'App_Login/subscriber_payment.html', {'form':form, 'payment':response_payment})
     form = SubscriberForm()
     return render(request, 'App_Login/subscriber_payment.html', {'form':form})
+
+def success(request):
+    return render(request,'App_Login/success.html')
+
+def token_send(request):
+    return render(request,'App_Login/token_send.html')
+
+def verify(request , auth_token):
+    try:
+        profile_obj = Profile.objects.filter(auth_token = auth_token).first()
+
+
+        if profile_obj:
+            if profile_obj.is_verified:
+                messages.success(request, 'Your account is already verified.')
+                return HttpResponseRedirect(reverse('App_Login:login_attempt'))
+            profile_obj.is_verified = True
+            profile_obj.save()
+            messages.success(request, 'Your account has been verified.')
+            return HttpResponseRedirect(reverse('App_Login:success'))
+        else:
+            return HttpResponseRedirect(reverse('App_Login:error_page'))
+    except Exception as e:
+        print(e)
+        return HttpResponseRedirect(reverse('home'))
+
+def error_page(request):
+    return  render(request , 'App_Login/error.html')
+
+def send_mail_after_registration(email , token):
+    subject = 'Your account needs to be verified'
+    message = f'Hey! Paste the link to verify your account http://127.0.0.1:8000/account/verify/{token}'
+    email_from = settings.EMAIL_HOST_USER
+    recipient_list = [email]
+    send_mail(subject, message , email_from ,recipient_list )

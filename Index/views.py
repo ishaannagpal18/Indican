@@ -3,10 +3,22 @@ from django.shortcuts import render
 import razorpay
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
-from App_Login.models import UserProfile, Subscriber
+from .models import *
+from .forms import *
+from App_Login.models import *
 
 def home(request):
     return render(request, 'index.html')
+
+def demo(request):
+    return render(request, 'demo.html')
+
+def demo1(request):
+    return render(request, 'demo1.html')
+
+@login_required(login_url='/account/login')
+def launch(request):
+    return render(request, 'launch.html')
 
 def aboutus(request):
     return render(request, 'aboutus.html')
@@ -54,6 +66,10 @@ def exhibition(request):
     return render(request, 'exhibition.html')
 
 @login_required(login_url='/account/login')
+def clubhouse(request):
+    return render(request, 'clubhouse.html')
+
+@login_required(login_url='/account/login')
 def ninja(request):
     return render(request, 'ninja.html')
 
@@ -72,3 +88,13 @@ def snake(request):
 @login_required(login_url='/account/login')
 def selfie(request):
     return render(request, 'selfie.html')
+
+@login_required(login_url='/account/login')
+def details(request):
+    if request.method == "POST":
+        form = DetailsForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+    form = DetailsForm()
+    img = Details.objects.all()
+    return render(request, 'details.html', {'img':img, 'form':form})

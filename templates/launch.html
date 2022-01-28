@@ -1,0 +1,104 @@
+{% extends 'layouts.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+Launching Soon
+{% endblock %}
+{% block style %}
+<link href="{% static 'css/launch.css'%}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<center>
+  
+<div class="cover">
+      </div>
+      <div class="cover1">
+        <div class="container d-flex flex-column align-items-center">
+
+
+          <h2 class="title">
+            <br>
+      <span class="title-word title-word-1">Indican</span>
+      <span class="title-word title-word-2">Friendship</span>
+      <span class="title-word title-word-3">Club</span>
+
+    </h2>
+    <h1>Stay tuned for something amazing!!</h1>
+
+
+
+
+      <br><br>
+      <div class="countdown d-flex justify-content-center" data-count="2022/02/06">
+        <div>
+          <h3>%d</h3>
+          <h4>Days</h4>
+        </div>
+        <div>
+          <h3>%h</h3>
+          <h4>Hours</h4>
+        </div>
+        <div>
+          <h3>%m</h3>
+          <h4>Minutes</h4>
+        </div>
+        <div>
+          <h3>%s</h3>
+          <h4>Seconds</h4>
+        </div>
+      </div>
+      <div class="container1">
+        <div class="headline">
+
+        </div>
+        <div class="social-buttons">
+        <!-- facebook  Button -->
+                <a href="https://www.facebook.com/Indican-Friendship-Club-110939114779952" target="blank" class="social-margin">
+                  <div class="social-icon facebook">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </div>
+                </a>
+
+
+
+                <!-- Youtube Button -->
+                <a href="https://www.youtube.com/channel/UCwzFcdmQdyONzEkkrRO-_pQ" target="blank"  class="social-margin">
+                  <div class="social-icon youtube">
+                    <i class="fa fa-youtube" aria-hidden="true"></i>
+                  </div>
+                </a>
+
+                <a href="https://instagram.com/indicanfc?utm_medium=copy_link" target="blank" class="social-margin">
+                  <div class="social-icon instagram">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </div>
+                </a>
+
+          <!-- TwitterButton -->
+                <a href="https://twitter.com/indicanfc" target="blank" class="social-margin">
+                  <div class="social-icon twitter">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </div>
+                </a>
+        </div>
+        </div>
+
+        <!-- <form action="forms/notify.php" method="post" role="form" class="php-email-form">
+          <div class="subscribe-form">
+            <input type="email" name="email"><input type="submit" value="Subscribe">
+          </div>
+          <div class="mt-2">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your notification request was sent. Thank you!</div>
+          </div>
+        </form> -->
+      </div>
+
+      </div>
+
+
+{% endblock %}
+{% block js %}
+<script src="{% static 'js/launch.js'%} "></script>
+{% endblock %}

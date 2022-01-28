@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import SignatureModel
+from .models import Details
 # Register your models here.
 
-admin.site.register(SignatureModel)
+@admin.register(Details)
+class DetailsAdmin(admin.ModelAdmin):
+ list_display = ['id', 'name', 'date']

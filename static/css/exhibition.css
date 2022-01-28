@@ -3,11 +3,11 @@
     width: 1920px;
     height: 1080px;
   }
-      .bag{
+      .bag2, .bag5, .bag6, .bag7{
     top: 43%;
     left: 39%;
-    width: 5%;
-    height: 7%;
+    width: 3%;
+    height: 5%;
     }
 
 }
@@ -26,10 +26,23 @@
     width: 1342px;
     height: 768px;
   }
-  .bag{
-      top: 43%;
-      left: 39%;
+  .bag2{
+      top: 53%;
+      left: 40.8%;
     }
+  .bag5{
+      top: 69%;
+      left: 34.4%;
+    }
+  .bag6{
+      top: 69%;
+      left: 40.7%;
+    }
+  .bag7{
+      top: 69%;
+      left: 58.5%;
+    }
+
 }
 @media (max-width: 1200px) {
   img{
@@ -55,7 +68,10 @@
 
 }
 }
-.bag{
+.bag2, .bag5, .bag6, .bag7{
   position: absolute;
   z-index: 1000;
+}
+.zoom-right{
+  transform: translateX(100px);
 }

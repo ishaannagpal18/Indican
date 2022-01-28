@@ -1,5 +1,9 @@
 from django.db import models
-from jsignature.fields import JSignatureField
 
-class SignatureModel(models.Model):
-    signature = JSignatureField()
+class Details(models.Model):
+    name = models.CharField(max_length=100, blank=False)
+    image = models.ImageField(upload_to="Details")
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
