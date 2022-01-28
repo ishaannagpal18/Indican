@@ -342,4 +342,10 @@ padding: 8% 0;
 .pdf{
   width: 100%;
 }
+.section-title p {
+font-size: 30px;
+}
+.card1{
+  width: 100%;
+}
 }
