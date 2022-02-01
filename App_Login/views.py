@@ -20,7 +20,7 @@ def register_attempt(request):
     if request.method == 'POST':
         fullname = request.POST.get('fullname')
         dob = request.POST.get('dob')
-        gender = request.POST.get('gender')
+        # gender = request.POST.get('gender')
         contact = request.POST.get('contact')
         country = request.POST.get('country')
         city = request.POST.get('city')
@@ -29,7 +29,7 @@ def register_attempt(request):
         password = request.POST.get('password')
         print(fullname)
         print(dob)
-        print(gender)
+        # print(gender)
         print(contact)
         print(country)
         print(city)
@@ -48,10 +48,9 @@ def register_attempt(request):
             user_obj.set_password(password)
             user_obj.save()
             auth_token = str(uuid.uuid4())
-            profile_obj = Profile.objects.create(user = user_obj , auth_token = auth_token, fullname = fullname, dob=dob,gender=gender, contact=contact, country=country, city=city)
+            profile_obj = Profile.objects.create(user = user_obj , auth_token = auth_token, fullname = fullname, dob=dob, contact=contact, country=country, city=city)
             profile_obj.save()
-            send_mail_after_registration(email , auth_token)
-            return HttpResponseRedirect(reverse('App_Login:token_send'))
+            return HttpResponseRedirect(reverse('App_Login:login_attempt'))
 
         except Exception as e:
             print(e)
@@ -70,11 +69,11 @@ def login_attempt(request):
             return HttpResponseRedirect(reverse('App_Login:login_attempt'))
 
 
-        profile_obj = Profile.objects.filter(user = user_obj ).first()
-
-        if not profile_obj.is_verified:
-            messages.success(request, 'Profile is not verified check your mail.')
-            return HttpResponseRedirect(reverse('App_Login:login_attempt'))
+        # profile_obj = Profile.objects.filter(user = user_obj ).first()
+        #
+        # if not profile_obj.is_verified:
+        #     messages.success(request, 'Profile is not verified check your mail.')
+        #     return HttpResponseRedirect(reverse('App_Login:login_attempt'))
 
         user = authenticate(username = username , password = password)
         if user is None:
