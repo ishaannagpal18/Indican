@@ -5,7 +5,7 @@
 Register Account
 {% endblock %}
 {% block style %}
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
 <link href="{% static 'css/register.css'%}" rel="stylesheet">
 {% endblock %}
 
@@ -34,7 +34,7 @@ Register Account
 
                     <!-- to error: add class "has-danger" -->
                     <div class="row">
-                      <div class="col-md-6">
+                      <div class="col-md-6 col-6">
                         <div class="form-group">
                             <label class="login-label" for="exampleInputEmail1">Full Name</label>
                             <input type="text" name="fullname" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -311,7 +311,7 @@ Register Account
                             <input type="text" name="city" class="form-control form-control-sm" id="exampleInputPassword1">
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-6 col-6">
                         <div class="form-group">
                             <label class="login-label" for="exampleInputEmail1">Username</label>
                             <input type="text" name="username" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">

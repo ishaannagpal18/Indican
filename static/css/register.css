@@ -73,6 +73,7 @@ a:hover{
 .login-label{
   font-weight: 600;
   color:black;
+  margin-bottom: 1%;
 }
 .login-input{
   font-size: 110%;
@@ -81,4 +82,16 @@ a:hover{
   color:black;
   font-weight:600;
    font-size:120%;
+}
+.form-group {
+margin-bottom: 1rem;
+}
+.btn-block {
+display: block;
+width: 100%;
+}
+@media screen and (max-width:550px){
+  .register-form{
+    width:90%;
+  }
 }
