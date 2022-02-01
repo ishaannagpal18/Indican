@@ -47,9 +47,9 @@ def register_attempt(request):
             user_obj = User(username = username , email = email)
             user_obj.set_password(password)
             user_obj.save()
-            auth_token = str(uuid.uuid4())
-            profile_obj = Profile.objects.create(user = user_obj , auth_token = auth_token, fullname = fullname, dob=dob, contact=contact, country=country, city=city)
-            profile_obj.save()
+            # auth_token = str(uuid.uuid4())
+            # profile_obj = Profile.objects.create(user = user_obj , auth_token = auth_token, fullname = fullname, dob=dob, contact=contact, country=country, city=city)
+            # profile_obj.save()
             return HttpResponseRedirect(reverse('App_Login:login_attempt'))
 
         except Exception as e:
