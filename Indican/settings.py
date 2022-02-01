@@ -91,12 +91,43 @@ WSGI_APPLICATION = 'Indican.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+# Database Choice,
+# Set DATABASE = 1 for SQLite
+# Set DATABASE = 2 for Postgres
+# pip install psycopg2 to use postgres in Django
+
+DATABASE = 1;
+
+if DEBUG and (DATABASE == 1):
+    # Use SQLite Database
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+elif (DATABASE == 2):
+    # Use Local Mysql Dtabase
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            # set database name
+            'NAME': 'ishaan',
+            # set your user details
+            'HOST': '127.0.0.1',
+            'PORT': '3306',
+            'PASSWORD': 'Ishaan@18',
+            'USER': 'root',
+
+
+        }
+    }
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
